@@ -1,0 +1,154 @@
+[
+  {
+    "resumeID": "10030015.pdf",
+    "name": null,
+    "role": "Engineering Lab Technician",
+    "professional summary": "My main objective in seeking employment with Triumph Actuation Systems Inc. is to work in a professional atmosphere where I can utilize my skills and continue to gain experience in the aerospace industry to advance in my career.",
+    "work experience": [
+      {
+        "company name": null,
+        "designation": "Engineering Lab Technician",
+        "period": "Oct 2016 to Current"
+      },
+      {
+        "company name": null,
+        "designation": "Engineering Lab Technician, Sr. Specialist",
+        "period": "Apr 2012 to Oct 2016"
+      },
+      {
+        "company name": null,
+        "designation": "Assembly/ Test Technician",
+        "period": "Mar 2007 to Mar 2012"
+      },
+      {
+        "company name": null,
+        "designation": "Munitions Systems Journeyman",
+        "period": "Mar 2003 to Mar 2007"
+      }
+    ],
+    "total experience in years": "20+",
+    "education": [
+      {
+        "degree": "Associates, Applied Science Electronics Engineering",
+        "university/college name": "Forsyth Technical Community College",
+        "year of graduation": "2011"
+      },
+      {
+        "degree": "Associates, Applied Science, Munitions Systems Technology",
+        "university/college name": "Community College of the Air Force",
+        "year of graduation": "2007"
+      }
+    ],
+    "courses": [
+      "LabView Course 1",
+      "Lean Six Sigma/5S training seminar"
+    ],
+    "publications": [],
+    "accomplishments": [],
+    "skills": [
+      "DasyLab",
+      "Labview",
+      "Mechanical",
+      "Electrical",
+      "Lean/5S",
+      "Hydraulic Testing",
+      "Test Stand Fabrication"
+    ],
+    "expected salary": null
+  },  
+  {
+    "resumeID": "12472574",
+    "name": null,
+    "role": "QA Engineering Team Lead",
+    "professional summary": "Eight years of progressive technical experience in quality assurance engineering of computer software in Windows environment. Expertise in QA tools and techniques, test strategies, system integration and testing. Strong knowledge in black box and automated/manual testing, bug tracking, and functional/regression testing.",
+    "work experience": [
+      {
+        "company name": "Imagicast",
+        "designation": "QA Engineering Team Lead",
+        "period": "March 2001 to July 2001"
+      },
+      {
+        "company name": "SenticaXchange",
+        "designation": "Quality Assurance Engineering Manager",
+        "period": "May 2000 to February 2001"
+      },
+      {
+        "company name": "Oracle (Customer Care/Service Applications)",
+        "designation": "QA Lead for Customer Care/Service Applications",
+        "period": "November 1998 to May 2000"
+      },
+      {
+        "company name": "Mail",
+        "designation": "Software Quality Engineer II",
+        "period": "February 1998 to November 1998"
+      },
+      {
+        "company name": "Foster City",
+        "designation": "Senior Quality Assurance Analyst",
+        "period": "September 1997 to February 1998"
+      },
+      {
+        "company name": null,
+        "designation": "Software Quality Assurance",
+        "period": "March 1993 to September 1997"
+      }
+    ],
+    "total experience in years": "8",
+    "education": [
+      {
+        "degree": "BS Electrical Engineering",
+        "university/college name": "Technion University - Haifa, Israel",
+        "year of graduation": "1993"
+      },
+      {
+        "degree": "Management Minor",
+        "university/college name": "National Education Center, San Francisco, California",
+        "year of graduation": "1994"
+      },
+      {
+        "degree": "Testing Computer Software",
+        "university/college name": "Kensington Training Program, San Mateo, California",
+        "year of graduation": "1994"
+      }
+    ],
+    "courses": [
+      "Testing Computer Software",
+      "Management Minor"
+    ],
+    "publications": [],
+    "accomplishments": [
+      "Led QA teams for high-profile product launches",
+      "Developed IEEE-compliant testing documentation",
+      "Designed and developed QA Test Plans and automated test suites",
+      "Contributed to strategic planning and Y2K certification projects"
+    ],
+    "skills": [
+      "Quality Assurance",
+      "Testing",
+      "Regression Testing",
+      "Black Box Testing",
+      "White Box Testing",
+      "Automated Testing",
+      "Manual Testing",
+      "Test Plans",
+      "Test Cases",
+      "Oracle",
+      "SQL",
+      "Unix",
+      "Windows NT",
+      "Visual Basic",
+      "Client/server systems",
+      "Data Warehousing",
+      "Data Mining",
+      "Bug Tracking (TRACKER)",
+      "Integration Testing",
+      "Wireless Systems",
+      "System Administration",
+      "Documentation",
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "expected salary": null
+  }
+]
