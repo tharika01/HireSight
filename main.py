@@ -6,9 +6,9 @@ from markitdown import MarkItDown
 
 logger = setup_logger()
 
-def main():
+def main(file_path: str):
     md = MarkItDown()
-    resume = md.convert("resumes/10030015.pdf")
+    resume = md.convert(file_path)
     logger.info(f"Content extracted by mark it down from the resume \n {resume.text_content}")
 
     messages = [
@@ -33,8 +33,9 @@ def main():
                 temperature=0.2,
                 response_format=ResumeChecklist
             )
-    response = response.choices[0].message.content
+    response = response.choices[0].message
     logger.info(f"candidate details extracted {response}")
+    return response.parsed.dict()
 
 if __name__ == '__main__':
-    main()
+    main("sample_resumes/10030015.pdf")

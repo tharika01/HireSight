@@ -17,7 +17,7 @@ class ResumeChecklist(BaseModel):
     links: Optional[List[str]] = Field(None, description='Links attached in the resume like the link to GitHub / LinkedIn / Portfolio Website / Blogs...')
     professional_summary: str = Field(..., description='A brief summary of the candidate\'s career objectives, key skills, and professional focus.')
     work_experience: Optional[List[WorkDetails]] = Field(None, description='Details of the most recent or relevant professional experience of the candidate, including company, designation, and duration.')
-    total_work_experience: str = Field(..., description='Total years of professional experience (e.g., "5 years", "10+ years" if currently employed). Append "+" if current role is ongoing.')
+    total_work_experience: str = Field(..., description='Total years of professional experience (e.g., "5", "10+" if currently employed). Append "+" if current role is ongoing.')
     education: Optional[List[EducationDetails]] = Field(None, description='Highest or most relevant educational qualification with institution and completion year.')
     courses: Optional[List[str]] = Field(None, description='List of non-degree courses or certifications completed by the candidate (e.g., "Data Science Bootcamp", "Certified Scrum Master").')
     publications: Optional[List[str]] = Field(None, description='List of academic or professional publications, if any, authored or co-authored by the candidate.')
