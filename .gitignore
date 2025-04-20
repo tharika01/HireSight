@@ -1,0 +1,4 @@
+.env
+llm_lab/
+**/__pycache__/
+__pycache__/
