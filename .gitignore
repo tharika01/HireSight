@@ -3,3 +3,4 @@ llm_lab/
 **/__pycache__/
 __pycache__/
 logs/
+results/*.*.*.json
