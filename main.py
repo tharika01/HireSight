@@ -36,7 +36,7 @@ def main(file_path: str):
     response = response.choices[0].message
     logger.info(f"candidate details extracted {response}")
 
-    with open('results/generated_output', 'a') as output_file:
+    with open('results/generated_output.json', 'a') as output_file:
         json.dump(response.parsed.dict(), output_file, indent=4)
     return response.parsed.dict()
 
