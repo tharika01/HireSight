@@ -64,7 +64,7 @@ uv pip install .
 ## ▶️ Running the MCP FastAPI Server
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn backend.main:app --reload
 ```
 
 Visit the interactive API docs at:
