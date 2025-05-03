@@ -11,7 +11,32 @@ logger = setup_logger()
 
 @router.post("/parse", operation_id="parse_resume")
 async def parse_resume(input):
-    """Endpoint to parse resume"""
+    """
+    Parse resume content to extract structured candidate information.
+
+    This endpoint is a tool that accepts raw resume text (or Markdown-extracted content)
+    and uses an LLM-based parser to extract structured candidate details such as:
+    - Name
+    - Email
+    - Phone number
+    - Education
+    - Work experience
+    - Skills
+    - Any other relevant fields defined by the ResumeChecklist schema
+
+    The parsing is performed using a language model (e.g., Azure OpenAI) with strict instructions
+    to extract data exactly as it appears in the input. If any expected field is missing,
+    the model will return `null` for that field.
+
+    Args:
+        input (str): The full resume content.
+
+    Returns:
+        dict: A dictionary of extracted resume fields conforming to the ResumeChecklist schema.
+
+    Raises:
+        Logs an error if any exception occurs during processing and returns None.
+    """
     logger.info(f"Content extracted by mark it down from the resume \n {input}")
     try:
         messages = [
@@ -35,8 +60,6 @@ async def parse_resume(input):
         response = response.choices[0].message
         logger.info(f"candidate details extracted {response}")
 
-        with open('results/generated_output.json', 'a') as output_file:
-            json.dump(response.parsed.model_dump(), output_file, indent=4)
         return response.parsed.model_dump()
     except Exception as e:
         logger.error(f"Exception occurred while parsing resume : {e}")
