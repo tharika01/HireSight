@@ -1,6 +1,6 @@
 import io
 from pypdf import PdfReader
-from agents import Agent, Runner
+from agents import Agent, Runner, trace,gen_trace_id
 from dotenv import load_dotenv
 from agents.mcp import MCPServerSse
 from fastapi_mcp import FastApiMCP
@@ -49,10 +49,12 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
                                     output_type=RecruitmentDecision,
                                     mcp_servers=[mcp_server]
                                 )
+            trace_id=gen_trace_id()
+            with trace(workflow_name="recruiter", trace_id=trace_id):
+                response = await Runner.run(recruiter_agent, f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
+                logger.info(f"View trace: https://platform.openai.com/traces/trace?trace_id={trace_id}\n")
+                logger.info(response)
 
-            response = await Runner.run(recruiter_agent, f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
-            logger.info(response)
-
-            return JSONResponse(content={"decision": str(response.final_output.decision), "reason" : str(response.final_output.reason)}, status_code=200)
+                return JSONResponse(content={"decision": str(response.final_output.decision), "reason" : str(response.final_output.reason)}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"error" : str(e)}, status_code=400)
