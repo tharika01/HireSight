@@ -11,20 +11,20 @@ HireSight provides tools for both:
 
 ## 🛠️ Getting Started
 
-### 1. Clone the repository
+#### 1. Clone the repository
 
 ```bash
 git https://github.com/tharika01/HireSight.git
 cd HireSight
 ```
 
-### 2. Install [uv](https://github.com/astral-sh/uv) if not already installed
+#### 2. Install [uv](https://github.com/astral-sh/uv) if not already installed
 
 ```bash
 curl -Ls https://astral.sh/uv/install.sh | bash
 ```
 
-### 3. Create and activate a virtual environment
+#### 3. Create and activate a virtual environment
 
 ```bash
 uv venv
@@ -34,7 +34,7 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate
 ```
 
-### 4. Install project dependencies
+#### 4. Install project dependencies
 
 If you're using `requirements.txt`:
 
@@ -49,7 +49,7 @@ uv pip install .
 ```
 
 ---
-## 5. Environment Configuration
+#### 5. Environment Configuration
 
 Create a `.env` file in the project root with the following:
 
