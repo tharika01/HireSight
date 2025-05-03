@@ -47,7 +47,7 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
                                     model="gpt-4o",
                                     instructions="Decide whether or not to recruit the candidate for the role",
                                     output_type=RecruitmentDecision,
-                                    mcp_server=[mcp_server]
+                                    mcp_servers=[mcp_server]
                                 )
 
             response = await Runner.run(recruiter_agent, f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
