@@ -1,6 +1,0 @@
-,name,role,summary_match,total_experience,courses,publications,skills,expected_salary,status,resume
-0,True,True,True,True,False,True,True,True,fail,10030015.pdf
-1,True,True,True,True,True,True,True,True,success,10219099.pdf
-2,True,True,True,True,True,True,False,True,fail,10624813.pdf
-3,True,True,True,False,False,True,True,True,fail,10712803.pdf
-4,True,True,True,False,True,True,False,True,fail,10985403.pdf
