@@ -46,10 +46,11 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
             recruiter_agent = Agent(name="recruiter agent",
                                     model="gpt-4o",
                                     instructions="Decide whether or not to recruit the candidate for the role",
-                                    output_type=RecruitmentDecision
+                                    output_type=RecruitmentDecision,
+                                    mcp_server=[mcp_server]
                                 )
 
-            response = await Runner.run(recruiter_agent(mcp_server=[mcp_server]), f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
+            response = await Runner.run(recruiter_agent, f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
             logger.info(response)
 
             return JSONResponse(content={"result": str(response.final_output), }, status_code=200)
