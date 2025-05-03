@@ -9,17 +9,6 @@ HireSight provides tools for both:
 
 ---
 
-## 📦 Features
-
-* ✅ Resume parsing via LLM
-* ✅ Recruiter-facing structured data extraction
-* ✅ Candidate-facing ATS feedback and role-fit analysis
-* 🔜 Multi-resume upload support
-* 🔌 Built with FastAPI + MCP + OpenAI Agents SDK
-* ⚡ Powered by `uv` for fast dependency management and virtual environments
-
----
-
 ## 🛠️ Getting Started
 
 ### 1. Clone the repository
@@ -60,19 +49,7 @@ uv pip install .
 ```
 
 ---
-
-## ▶️ Running the MCP FastAPI Server
-
-```bash
-uvicorn backend.main:app --reload
-```
-
-Visit the interactive API docs at:
-👉 `http://localhost:8000/docs`
-
----
-
-## ⚙️ Environment Configuration
+## 5. Environment Configuration
 
 Create a `.env` file in the project root with the following:
 
@@ -82,6 +59,16 @@ AZURE_OPENAI_MODEL=gpt-4
 OPENAI_API_BASE=https://your-endpoint.openai.azure.com
 MCP_SERVER_URL="http://localhost:8000/mcp"
 ```
+---
+
+## ▶️ Running the MCP FastAPI Server
+
+```bash
+uvicorn backend.main:app --reload
+```
+
+Visit the interactive API docs at:
+👉 `http://localhost:8000/docs`
 
 ---
 
