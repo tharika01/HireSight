@@ -4,7 +4,7 @@ showSidebarNavigation = false
 [theme]
 
 # Primary accent color.
-primaryColor = "#EFEFD0" 
+primaryColor = "#D4F5F5" 
 
 # Background color of the app.
 backgroundColor = "#1A659E"
