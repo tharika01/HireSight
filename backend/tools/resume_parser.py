@@ -29,12 +29,15 @@ async def parse_resume(input):
     the model will return `null` for that field.
 
     Args:
+    -----
         input (str): The full resume content.
 
     Returns:
+    --------
         dict: A dictionary of extracted resume fields conforming to the ResumeChecklist schema.
 
     Raises:
+    -------
         Logs an error if any exception occurs during processing and returns None.
     """
     logger.info(f"Content extracted by mark it down from the resume \n {input}")
