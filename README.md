@@ -61,7 +61,7 @@ MCP_SERVER_URL="http://localhost:8000/mcp"
 ```
 ---
 
-## ▶️ Running the MCP FastAPI Server
+#### 6. ▶️ Running the MCP FastAPI Server
 
 ```bash
 uvicorn backend.main:app --reload
