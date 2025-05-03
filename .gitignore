@@ -1,6 +1,7 @@
 .env
-llm_lab/
+venv/
 **/__pycache__/
 __pycache__/
 logs/
-results/*.*.*.json
+**/results/*.*.*.json
+uv.lock

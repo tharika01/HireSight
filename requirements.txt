@@ -3,3 +3,12 @@ python-dotenv
 markitdown[pdf]
 openai
 thefuzz[speedup]
+openai-agents
+mcp[cli]
+httpx
+fastapi 
+uvicorn
+fastapi-mcp
+python-multipart
+# textract
+pypdf

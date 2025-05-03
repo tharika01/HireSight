@@ -1,0 +1,17 @@
+[project]
+name = "ApplySmart"
+version = "0.1.0"
+dependencies = [
+    "pydantic",
+    "python-dotenv",
+    "markitdown[pdf]",
+    "openai",
+    "thefuzz[speedup]",
+    "openai-agents",
+    "mcp[cli]",
+    "httpx",
+    "uvicorn",
+    "fastapi-mcp",
+    "python-multipart",
+    "pypdf>=5.4.0",
+]
