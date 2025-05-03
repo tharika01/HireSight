@@ -1,5 +1,0 @@
-pydantic
-python-dotenv
-markitdown[pdf]
-openai
-thefuzz[speedup]

@@ -1,7 +1,7 @@
 import os
 import json
 import pandas as pd
-from main import main
+from backend.main import main
 from config.config import setup_logger
 from thefuzz import fuzz
 
@@ -25,9 +25,11 @@ class Eval():
         
         if len(expected_output) != len(generated_output):
             return False
-        #TODO : the order of comparison matters
-        expected_output=set(map(str.lower, expected_output))
-        generated_output=set(map(str.lower, generated_output))
+        
+        expected_output=set(map(str.lower, sorted(expected_output)))
+        generated_output=set(map(str.lower, sorted(generated_output)))
+
+        
         logger.info(f"expected output : {expected_output}\ngen o/p: {generated_output}")
         
         for (exp, gen) in zip(expected_output, generated_output):
