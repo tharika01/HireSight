@@ -9,7 +9,7 @@ def get_base64_image(image_path):
     return f"data:image/jpg;base64,{encoded}"
 
 # Path to your local image
-image_url = get_base64_image("frontend/assets/banner.jpg")
+image = get_base64_image("frontend/assets/banner.jpg")
 
 
 # --- Page Configuration ---
@@ -25,32 +25,36 @@ st.set_page_config(
 st.markdown(f"""
     <style>
     .title-container {{
-        background-image: url('{image_url}');
+        background-image: url('{image}');
         background-size: cover;
         background-position: center;
+        min-height: 250px;
+        border-radius: 2rem;
         padding: 2rem;
-        border-radius: 1rem;
-        text-align: center;
         margin-bottom: 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         color: white;
     }}
     .title-container h1, .title-container h2 {{
         color: white;
-        text-shadow: 1px 1px 2px #000000;
+        text-shadow: 1px 1px 1px #000000;
     }}
     </style>
 
     <div class="title-container">
-        <h3>Welcome to <strong>HireSight</strong></h3>
-        <h4>AI-powered assistant for smarter hiring and job searching</h4>
+        <h2>Welcome to <strong>HireSight !</strong></h2>
     </div>
 """, unsafe_allow_html=True)
 
 
 # --- About Section ---
-st.write("# 🔎 What is HireSight?")
+st.write("# What is HireSight?")
+st.subheader("_HireSight_ is an AI-powered application for smarter hiring and job searching")
 st.markdown("""
-## **HireSight** leverages AI to help both:
+### **HireSight** leverages AI to help both:
 
 - ### 👩‍💼 **Recruiters**:    
     - Upload applicant resumes
@@ -70,8 +74,8 @@ st.markdown("---")
 
 # --- Navigation ---
 st.header("🚀 Get Started")
-st.page_link("pages/Recruiter.py", label="I'm a Recruiter", icon="🧑‍💼")
-st.page_link("pages/Candidate.py", label="I'm a Candidate", icon="📄")
+st.page_link("pages/01_Recruiter_Dashboard.py", label="I'm a Recruiter", icon="🧑‍💼")
+st.page_link("pages/02_Candidate_Insights.py", label="I'm a Candidate", icon="📄")
 
 st.markdown("---")
 st.caption("Built with Streamlit, FastAPI, and OpenAI Agents")
