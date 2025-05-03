@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from fastapi import APIRouter
 from backend.configurations.openai_client_config import client
 from backend.schemas.structured_output import ResumeChecklist
-from backend.configurations.config import setup_logger, azure_openai_model
+from backend.configurations.app_configurations import setup_logger, azure_openai_model
 
 router = APIRouter()
 logger = setup_logger()

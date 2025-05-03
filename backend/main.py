@@ -6,7 +6,7 @@ from agents.mcp import MCPServerSse
 from fastapi_mcp import FastApiMCP
 from fastapi.responses import JSONResponse
 from fastapi import FastAPI,  UploadFile, File, Form
-from backend.configurations.config import setup_logger
+from backend.configurations.app_configurations import setup_logger, MCP_SERVER_URL
 from backend.schemas.structured_output import RecruitmentDecision
 from backend.tools.resume_parser import router as parse_resume_router
 
@@ -39,7 +39,7 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
                 extracted_text += text + "\n"
                 
         logger.info(f"file uploaded is {extracted_text}")
-        async with MCPServerSse(params={"url": "http://localhost:8000/mcp"}) as mcp_server:
+        async with MCPServerSse(params={"url": MCP_SERVER_URL}) as mcp_server:
             tools = await mcp_server.list_tools()
             logger.info(tools)
 
