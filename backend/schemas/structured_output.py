@@ -43,5 +43,5 @@ class ResumeChecklist(BaseModel):
     expected_salary: Optional[int] = Field(..., description='The salary the candidate expects to receive, ideally in the local currency and as an annual amount (e.g., 70000 for $70,000/year). If nothing is mentioned simply return 0.')
 
 class RecruitmentDecision(BaseModel):
-    decisions: str = Field(description="Mention Hire if the candidate fits the job requirements, if not mention no hire.")
+    decision: str = Field(description="Mention Hire if the candidate fits the job requirements, if not mention no hire.")
     reason: str = Field(description="Explain why you made the decision of whether or not to hire the candidate.")

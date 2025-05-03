@@ -53,6 +53,6 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
             response = await Runner.run(recruiter_agent, f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
             logger.info(response)
 
-            return JSONResponse(content={"result": str(response.final_output), }, status_code=200)
+            return JSONResponse(content={"decision": str(response.final_output.decision), "reason" : str(response.final_output.reason)}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"error" : str(e)}, status_code=400)
