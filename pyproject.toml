@@ -1,5 +1,5 @@
 [project]
-name = "ApplySmart"
+name = "HireSight"
 version = "0.1.0"
 dependencies = [
     "pydantic",
