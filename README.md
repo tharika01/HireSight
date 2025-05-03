@@ -25,8 +25,8 @@ HireSight provides tools for both:
 ### 1. Clone the repository
 
 ```bash
-git https://github.com/tharika01/ApplySmart.git
-cd ApplySmart
+git https://github.com/tharika01/HireSight.git
+cd HireSight
 ```
 
 ### 2. Install [uv](https://github.com/astral-sh/uv) if not already installed
