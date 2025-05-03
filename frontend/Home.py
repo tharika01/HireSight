@@ -9,7 +9,7 @@ def get_base64_image(image_path):
     return f"data:image/jpg;base64,{encoded}"
 
 # Path to your local image
-image = get_base64_image("frontend/assets/banner.jpg")
+image = get_base64_image("assets/banner.jpg")
 
 
 # --- Page Configuration ---
