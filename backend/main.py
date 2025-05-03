@@ -1,13 +1,13 @@
 import io
 from pypdf import PdfReader
-from agents import Runner
+from agents import Agent, Runner
 from dotenv import load_dotenv
 from agents.mcp import MCPServerSse
 from fastapi_mcp import FastApiMCP
 from fastapi.responses import JSONResponse
 from fastapi import FastAPI,  UploadFile, File, Form
 from backend.configurations.config import setup_logger
-from backend.agents.agent_definitions import recruiter_agent
+from backend.schemas.structured_output import RecruitmentDecision
 from backend.tools.resume_parser import router as parse_resume_router
 
 load_dotenv()
@@ -42,6 +42,12 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
         async with MCPServerSse(params={"url": "http://localhost:8000/mcp"}) as mcp_server:
             tools = await mcp_server.list_tools()
             logger.info(tools)
+
+            recruiter_agent = Agent(name="recruiter agent",
+                                    model="gpt-4o",
+                                    instructions="Decide whether or not to recruit the candidate for the role",
+                                    output_type=RecruitmentDecision
+                                )
 
             response = await Runner.run(recruiter_agent(mcp_server=[mcp_server]), f"Here is the resume:\n{extracted_text}\n\nThe candidate is applying for the role: {role} .\nShould we hire this person?")
             logger.info(response)

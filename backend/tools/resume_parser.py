@@ -1,19 +1,13 @@
 import json
 from pydantic import BaseModel
 from fastapi import APIRouter
-from backend.agents.client import client
+from backend.configurations.openai_client_config import client
 from backend.schemas.structured_output import ResumeChecklist
 from backend.configurations.config import setup_logger, azure_openai_model
 
 router = APIRouter()
 logger = setup_logger()
 
-class ResumeInput(BaseModel):
-    resume: str
-
-class ResumeOutput(BaseModel):
-    name: str
-    email: str
 
 @router.post("/parse", operation_id="parse_resume")
 async def parse_resume(input):
