@@ -2,17 +2,8 @@
 showSidebarNavigation = false
 
 [theme]
-
-# Primary accent color.
-primaryColor = "#D4F5F5" 
-
-# Background color of the app.
-backgroundColor = "#1A659E"
-
-# Background color used for most interactive widgets.
-secondaryBackgroundColor = "#004E89"
-
-# Color used for almost all text.
-textColor = "#F6F8FF"
-
+primaryColor="#5681d0"
+backgroundColor="#212750"
+secondaryBackgroundColor="#1a1a3d"
+textColor="#f8f8f2"
 headingFont = "serif"
