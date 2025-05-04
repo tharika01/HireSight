@@ -1,11 +1,35 @@
+import os
 from openai import AzureOpenAI, OpenAI
-from backend.configurations.app_configurations import OPENAI_API_KEY, azure_endpoint, azure_openai_api_version, azure_openai_model, setup_logger
+from dotenv import load_dotenv
+from backend.configurations.app_configurations import setup_logger
+
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+azure_openai_api_version = os.getenv("AZURE_OPENAI_API_VERSION")
+azure_openai_model = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 
 logger = setup_logger()
 
-# client = AzureOpenAI(
-#             azure_endpoint=azure_endpoint,
-#             api_key=OPENAI_API_KEY,
-#             api_version=azure_openai_api_version
-#         )
-client = OpenAI(api_key=OPENAI_API_KEY)
+def get_client():
+    if azure_endpoint and azure_openai_api_version:
+        try:
+            # Try Azure client
+            client = AzureOpenAI(
+                azure_endpoint=azure_endpoint,
+                api_key=OPENAI_API_KEY,
+                api_version=azure_openai_api_version
+            )
+            # Make a small test call to ensure the key works
+            client.models.list()  # or another cheap request
+            logger.info("Using AzureOpenAI")
+            return client
+        except Exception as e:
+            print(f"AzureOpenAI failed: {e}")
+            print("Falling back to OpenAI")
+
+    # Fallback to OpenAI
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    print("Using OpenAI")
+    return client
