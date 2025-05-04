@@ -1,7 +1,7 @@
 import os
 import json
 import pandas as pd
-from backend.main import main
+from backend.app import main
 from config.config import setup_logger
 from thefuzz import fuzz
 

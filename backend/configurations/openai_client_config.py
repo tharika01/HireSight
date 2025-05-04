@@ -26,10 +26,10 @@ def get_client():
             logger.info("Using AzureOpenAI")
             return client
         except Exception as e:
-            print(f"AzureOpenAI failed: {e}")
-            print("Falling back to OpenAI")
+            logger.warning(f"AzureOpenAI failed: {e}")
+            logger.warning("Falling back to OpenAI")
 
     # Fallback to OpenAI
     client = OpenAI(api_key=OPENAI_API_KEY)
-    print("Using OpenAI")
+    logger.info("Using OpenAI")
     return client

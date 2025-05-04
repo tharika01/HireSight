@@ -39,7 +39,7 @@ async def match_profile(file: UploadFile = File(...), role: str = Form(...)):
                 extracted_text += text + "\n"
                 
         logger.info(f"file uploaded is {extracted_text}")
-        async with MCPServerSse(params={"url": MCP_SERVER_URL, "client_session_timeout_seconds": 10}) as mcp_server:
+        async with MCPServerSse(params={"url": MCP_SERVER_URL, "timeout" : 10.0, "sse_read_timeout": 10.0}) as mcp_server:
             tools = await mcp_server.list_tools()
             logger.info(tools)
 

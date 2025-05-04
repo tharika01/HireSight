@@ -1,5 +1,8 @@
+import os
 import streamlit as st
 import requests
+
+BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 
 # --- Page Config ---
 st.set_page_config(page_title="HireSight | Recruiter", layout="wide")
@@ -48,7 +51,7 @@ col2.subheader("AI Hiring Recommendation")
 if st.session_state.clicked:
     if uploaded_file is not None and role.strip():
         with st.spinner("Analyzing resume and generating decision..."):
-            url = "http://127.0.0.1:8000/recruiter/make_recruitment_decision"
+            url = f"{BASE_URL}/recruiter/make_recruitment_decision"
 
             files = {
                 "file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")
