@@ -1,13 +1,13 @@
 import io
 from pypdf import PdfReader
-from agents import Agent, Runner, trace,gen_trace_id
 from dotenv import load_dotenv
 from agents.mcp import MCPServerSse
 from fastapi_mcp import FastApiMCP
 from fastapi.responses import JSONResponse
+from agents import Agent, Runner, trace,gen_trace_id
 from fastapi import FastAPI,  UploadFile, File, Form
 from backend.configurations.app_configurations import setup_logger, MCP_SERVER_URL
-from backend.schemas.structured_output import RecruitmentDecision
+from backend.schemas.openai_response_fromatter import RecruitmentDecision
 from backend.tools.resume_parser import router as parse_resume_router
 
 load_dotenv()

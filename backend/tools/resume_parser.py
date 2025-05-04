@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from backend.configurations.openai_client_config import get_client, azure_openai_model
-from backend.schemas.structured_output import ResumeChecklist
+from backend.schemas.openai_response_fromatter import ResumeChecklist
 from backend.configurations.app_configurations import setup_logger
 
 router = APIRouter()
