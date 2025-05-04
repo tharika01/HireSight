@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 import base64
 
 # Load your image and convert to base64
@@ -54,7 +53,7 @@ st.markdown(f"""
 st.write("# What is HireSight?")
 st.subheader("_HireSight_ is an AI-powered application for smarter hiring and job searching")
 st.markdown("""
-### **HireSight** leverages AI to help both:
+#### HireSight leverages AI to help both:
 
 - ### 👩‍💼 **Recruiters**:    
     - Upload applicant resumes

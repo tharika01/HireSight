@@ -73,4 +73,4 @@ if st.session_state.clicked:
             col2.error("Error from server")
             col2.write(response.text)
     else:
-        col2.warning("Please enter a role and upload a valid PDF resume.")
+        col2.warning("Please enter a role and upload a valid resume.")
