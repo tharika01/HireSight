@@ -1,9 +1,7 @@
-import json
-from pydantic import BaseModel
 from fastapi import APIRouter
-from backend.configurations.openai_client_config import client
+from backend.configurations.openai_client_config import get_client, azure_openai_model
 from backend.schemas.structured_output import ResumeChecklist
-from backend.configurations.app_configurations import setup_logger, azure_openai_model
+from backend.configurations.app_configurations import setup_logger
 
 router = APIRouter()
 logger = setup_logger()
@@ -53,7 +51,7 @@ async def parse_resume(input):
                 "role": "user", 
                 "content": f"Candidates resume \n{input}"},
         ]
-        
+        client = get_client()
         response = client.beta.chat.completions.parse(
                     model=azure_openai_model,
                     messages=messages,
